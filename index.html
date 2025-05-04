@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTU Academic Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add some basic styling if styles.css isn't working */
+        .group-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .group-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-actions">
+            <button id="like-btn" onclick="incrementLike()">
+                <i class="fas fa-thumbs-up"></i> <span id="like-count">0</span> Likes
+            </button>
+        </div>
+        
+        <div class="hero-header">
+            <h1 class="main-title">KTU 2024 Scheme</h1>
+            <h2 class="sub-title">SGPA/CGPA Calculator</h2>
+        </div>
+        
+        <h3 class="group-select-title">Select Your Academic Group</h3>
+        
+        <div class="groups-container">
+            <div class="group-card group-a" onclick="navigateToGroup('A')">
+                <div class="group-header">
+                    <h2>Group A</h2>
+                    <p>Computer and Information Science</p>
+                </div>
+                <div class="branches">
+                    <ul>
+                        <li>Computer Science and Engineering</li>
+                        <li>Information Technology</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Computer Science and Engineering and Business Systems</li>
+                        <li>Computer Science and Engineering (Artificial Intelligence)</li>
+                        <li>CSE (Data Science)</li>
+                        <li>Computer Science and Engineering (Artificial Intelligence and Machine Learning)</li>
+                        <li>CSE (Artificial Intelligence and Data Science)</li>
+                        <li>AI and Machine Learning</li>
+                        <li>CSE (Internet of Things)</li>
+                        <li>CSE (IoT)</li>
+                        <li>CSE (Block Chain)</li>
+                        <li>CSE (Cyber Security)</li>
+                        <li>CSE (IoT and CS including Block Chain Technology)</li>
+                        <li>CS and Business Systems</li>
+                        <li>CS and Design</li>
+                        <li>Cyber Security</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="group-card group-b" onclick="navigateToGroup('B')">
+                <div class="group-header">
+                    <h2>Group B</h2>
+                    <p>Electrical Science</p>
+                </div>
+                <div class="branches">
+                    <ul>
+                        <li>Electronics & Communication Engineering</li>
+                        <li>Electronics and Computer Engineering</li>
+                        <li>Electrical and Electronics Engineering</li>
+                        <li>Electrical and Computer Engineering</li>
+                        <li>Electronics and Biomedical Engineering</li>
+                        <li>Electronics and Communication (Advanced Communication Technology)</li>
+                        <li>Electronics Engineering (VLSI Design and Technology)</li>
+                        <li>Biomedical Engineering</li>
+                        <li>Biomedical and Robotics Engineering</li>
+                        <li>Electronics & Instrumentation Engineering</li>
+                        <li>Instrumentation and Control Engineering</li>
+                        <li>Applied Electronics & Instrumentation Engineering</li>
+                        <li>Robotics and Artificial Intelligence</li>
+                        <li>Robotics and Automation</li>
+                        <li>Cyber Physical System</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="group-card group-c" onclick="navigateToGroup('C')">
+                <div class="group-header">
+                    <h2>Group C</h2>
+                    <p>Physical Science</p>
+                </div>
+                <div class="branches">
+                    <ul>
+                        <li>Civil Engineering</li>
+                        <li>Aeronautical Engineering</li>
+                        <li>Chemical Engineering</li>
+                        <li>Agriculture Engineering</li>
+                        <li>Civil and Environmental Engineering</li>
+                        <li>Industrial Engineering</li>
+                        <li>Mechanical Engineering</li>
+                        <li>Metallurgical & Materials Engineering</li>
+                        <li>Mechanical Engineering (Auto)</li>
+                        <li>Naval Architecture & Ship Building</li>
+                        <li>Mechanical Engineering (Automobile)</li>
+                        <li>Engineering</li>
+                        <li>Automobile Engineering</li>
+                        <li>Polymer Engineering</li>
+                        <li>Mechatronics Engineering</li>
+                        <li>Safety and Fire Engineering</li>
+                        <li>Production Engineering</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="group-card group-d" onclick="navigateToGroup('D')">
+                <div class="group-header">
+                    <h2>Group D</h2>
+                    <p>Life Science</p>
+                </div>
+                <div class="branches">
+                    <ul>
+                        <li><i class="fas fa-dna"></i> Biotechnology</li>
+                        <li><i class="fas fa-flask"></i> Biochemical Engineering</li>
+                        <li><i class="fas fa-utensils"></i> Food Technology</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
