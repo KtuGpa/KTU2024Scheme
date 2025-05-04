@@ -160,25 +160,6 @@ body {
   margin-bottom: 20px;
 }
 
-#like-btn {
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 500;
-  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
-  transition: all 0.3s ease;
-}
-
-#like-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
-}
 
 /* Responsive Design from styles.css (preserved for index.html) */
 @media (max-width: 768px) {
