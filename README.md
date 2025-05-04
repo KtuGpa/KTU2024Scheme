@@ -30,6 +30,7 @@ To run the project locally:
 ```bash
 git clone https://github.com/KtuGpa/KTU2024Scheme.git
 cd KTU2024Scheme
+```
 
 Then open any of the group HTML files in a browser:
 
@@ -42,9 +43,9 @@ group-C.html
 group-D.html
 
 
-📂 Project Structure
+## 📂 Project Structure
 
-KTU2024Scheme/
+```KTU2024Scheme/
 ├── group-A.html
 ├── group-B.html
 ├── group-C.html
@@ -52,12 +53,12 @@ KTU2024Scheme/
 ├── index.html
 ├── script.js
 └── styles.css
-
-📈 How It Works
+```
+##📈 How It Works
 
 Each calculator allows students to enter their grades according to their curriculum group. The SGPA is then computed based on subject credits and KTU’s grading rules.
 
-🤝 Contributing
+##🤝 Contributing
 
 Contributions are welcome!
 
@@ -77,6 +78,4 @@ Contributions are welcome!
 
 
 
-📄 License
 
-This project is licensed under the MIT License.
