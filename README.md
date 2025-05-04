@@ -1,64 +1,45 @@
-KTU 2024 Scheme SGPA Calculator
+# KTU 2024 Scheme SGPA Calculator
 
-A lightweight, web-based SGPA calculator tailored for students of the Kerala Technological University (KTU) following the 2024 academic scheme.  This tool simplifies the process of calculating Semester Grade Point Averages (SGPA) for various student groups. 
+A lightweight, web-based SGPA calculator tailored for students of the Kerala Technological University (KTU) following the 2024 academic scheme. This tool simplifies the process of calculating Semester Grade Point Averages (SGPA) for various student groups.
 
-🔗 Live Demo
+## 🔗 Live Demo
 
-Access the calculator here: ktugpa.github.io/KTU2024Scheme
+[Click here to try it out](https://ktugpa.github.io/KTU2024Scheme/)
 
-📌 Features
+## 📌 Features
 
-Group-Specific Calculators: Dedicated pages for each student group:
+- **Group-Specific Calculators**:
+  - [Group A](https://ktugpa.github.io/KTU2024Scheme/group-A.html)
+  - [Group B](https://ktugpa.github.io/KTU2024Scheme/group-B.html)
+  - [Group C](https://ktugpa.github.io/KTU2024Scheme/group-C.html)
+  - [Group D](https://ktugpa.github.io/KTU2024Scheme/group-D.html)
+- **User-Friendly Interface**: Intuitive design with easy input and instant results.
+- **Responsive Design**: Works on mobile, tablet, and desktop.
+- **Offline Ready**: Fully client-side. No server required.
 
-Group A
+## 🛠️ Technologies Used
 
-Group B
+- HTML5
+- CSS3
+- JavaScript (ES6)
 
-Group C
+## 🚀 Getting Started
 
-Group D
+To run the project locally:
 
-
-User-Friendly Interface: Intuitive design for easy input of grades and instant SGPA computation.
-
-Responsive Design: Optimized for desktops, tablets, and mobile devices.
-
-No Backend Required: Entirely client-side, ensuring quick load times and offline functionality. 
-
-
-🛠️ Technologies Used
-
-HTML5
-
-CSS3
-
-**JavaScript (ES6)** 
-
-
-🚀 Getting Started
-
-To run the calculator locally:
-
-1. Clone the Repository:
-
+```bash
 git clone https://github.com/KtuGpa/KTU2024Scheme.git
-
-
-
-
-
-2. Navigate to the Project Directory:
-
 cd KTU2024Scheme
 
+Then open any of the group HTML files in a browser:
 
+group-A.html
 
+group-B.html
 
+group-C.html
 
-3. Open the Desired Group Page:
-
-Open group-A.html, group-B.html, group-C.html, or group-D.html in your preferred web browser.
-
+group-D.html
 
 
 📂 Project Structure
@@ -72,43 +53,30 @@ KTU2024Scheme/
 ├── script.js
 └── styles.css
 
-
-
-group-*.html : Individual calculators for each student group.
-
-index.html : Landing page directing users to their respective group calculators.
-
-script.js : Handles grade input processing and SGPA calculation logic.
-
-styles.css : Defines the visual styling of the application. 
-
-
 📈 How It Works
 
-Users input their grades for each subject as per their group's curriculum.  Upon submission, the calculator computes the SGPA based on the entered grades and the credit weightage of each subject, adhering to the KTU 2024 grading guidelines. 
+Each calculator allows students to enter their grades according to their curriculum group. The SGPA is then computed based on subject credits and KTU’s grading rules.
 
 🤝 Contributing
 
-Contributions are welcome!  If you'd like to enhance the calculator, fix bugs, or add new features: 
+Contributions are welcome!
 
-1. Fork the Repository
-
-
-2. Create a New Branch:  git checkout -b feature-name
+1. Fork the repo
 
 
-3. Commit Your Changes:  git commit -m 'Add feature'
+2. Create a new branch: git checkout -b feature-name
 
 
-4. Push to the Branch:  git push origin feature-name
+3. Commit your changes: git commit -m "Add new feature"
 
 
-5. Open a Pull Request 
+4. Push to your fork: git push origin feature-name
 
 
+5. Submit a pull request
 
-Please ensure your code adheres to the existing code style and includes relevant documentation. 
+
 
 📄 License
 
-This project is licensed under the MIT License. 
+This project is licensed under the MIT License.
