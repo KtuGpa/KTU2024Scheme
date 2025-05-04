@@ -20,13 +20,6 @@ function updateLikeCountDisplay() {
     }
 }
 
-// Function to increment like count
-function incrementLike() {
-    likeCount++;
-    localStorage.setItem('likeCount', likeCount.toString());
-    updateLikeCountDisplay();
-}
-
 // Function to toggle between grade and marks input
 function toggleInputType(selectElement) {
     const row = selectElement.closest('tr');
