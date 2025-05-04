@@ -1,0 +1,410 @@
+/* Base Styles from styles.css (preserved for index.html) */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  color: #2d3748;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles from styles.css (preserved for index.html) */
+.hero-header {
+  text-align: center;
+  margin: 30px 0 40px;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.sub-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 10px 0 0;
+  opacity: 0.9;
+}
+
+.group-select-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin: 0 0 30px;
+  position: relative;
+}
+
+.group-select-title:after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #3498db;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Group Cards Container from styles.css (preserved for index.html) */
+.groups-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 40px 0;
+}
+
+/* Group Card Styles from styles.css (preserved for index.html) */
+.group-card {
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  border: none;
+}
+
+.group-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.group-header {
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.group-header h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.group-header p {
+  margin: 5px 0 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.branches {
+  padding: 20px;
+  background: white;
+}
+
+.branches ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.branches li {
+  padding: 12px 0;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+.branches li:last-child {
+  border-bottom: none;
+}
+
+.branches i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+  color: #4a5568;
+}
+
+.view-more {
+  color: #3498db;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Group Specific Colors from styles.css (preserved for index.html) */
+.group-a .group-header {
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+}
+
+.group-b .group-header {
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+}
+
+.group-c .group-header {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.group-d .group-header {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+/* Like Button Styles from styles.css (preserved for index.html) */
+.header-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+#like-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+#like-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Responsive Design from styles.css (preserved for index.html) */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .sub-title {
+    font-size: 1.4rem;
+  }
+  
+  .groups-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .group-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-header {
+    padding: 15px;
+  }
+  
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .sub-title {
+    font-size: 1.2rem;
+  }
+  
+  .group-select-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* START OF GROUP-A.HTML SPECIFIC STYLES FROM styles1.css */
+
+/* Table Styles */
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.course-table th, .course-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.course-table th {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.course-table td {
+  height: 60px;
+  vertical-align: middle;
+}
+
+/* Form Elements - Perfect Vertical Alignment */
+select, input[type="number"] {
+  height: 38px;
+  line-height: 38px;
+  padding: 0 12px;
+  margin: 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+  padding-right: 32px;
+}
+
+/* Download Optimization */
+.capturing select, 
+.capturing input[type="number"] {
+  height: 42px;
+  line-height: 42px;
+  font-size: 15px;
+  padding: 0 15px;
+}
+
+.capturing .course-table td {
+  height: 65px;
+}
+
+/* Other Components */
+.header-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+#like-btn, #download-btn {
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#like-btn:hover, #download-btn:hover {
+  background-color: #2980b9;
+}
+
+.sgpa-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #d4edda; /* light green */
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #2980b9;
+}
+
+/* Semester Tabs */
+.semester-tabs {
+  display: flex;
+  margin: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* CGPA button style */
+#cgpa-btn {
+  padding: 8px 15px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: auto;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 5px 5px 0 0;
+  font-weight: bold;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+  background-color: #ddd;
+}
+
+.tab-button.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.semester-content {
+  display: none;
+}
+
+.semester-content.active {
+  display: block;
+}
+
+/* Responsive adjustments for group-A.html */
+@media (max-width: 768px) {
+  .header-actions {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .semester-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab-button {
+    margin-bottom: 5px;
+  }
+  
+  .course-table th, 
+  .course-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
