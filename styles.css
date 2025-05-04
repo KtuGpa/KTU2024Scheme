@@ -293,23 +293,6 @@ select {
   margin-bottom: 20px;
 }
 
-#like-btn, #download-btn {
-  padding: 8px 15px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: background-color 0.3s ease;
-}
-
-#like-btn:hover, #download-btn:hover {
-  background-color: #2980b9;
-}
-
 .sgpa-container {
   margin-top: 30px;
   padding: 20px;
