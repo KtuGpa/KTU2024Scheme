@@ -97,7 +97,7 @@ function calculateSemesterSGPA(semesterId) {
         }
     });
 
-    return totalCredits > 0 ? Math.round((totalGradePoints / totalCredits) * 100) / 100 : 0;
+    return totalCredits > 0 ? parseFloat((totalGradePoints / totalCredits).toFixed(2)) : 0;
 }
 
 function calculateSGPA() {
@@ -117,7 +117,7 @@ function calculateCGPA() {
     const sgpa1 = parseFloat(document.getElementById('sgpa-result-sem1')?.textContent) || 0;
     const sgpa2 = parseFloat(document.getElementById('sgpa-result-sem2')?.textContent) || 0;
 
-    const cgpa = Math.round(((sgpa1 + sgpa2) / 2) * 100) / 100;
+    const cgpa = parseFloat(((sgpa1 + sgpa2) / 2).toFixed(2));
 
     const cgpaResult = document.getElementById('cgpa-result');
     if (cgpaResult) {
