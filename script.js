@@ -117,7 +117,7 @@ function calculateCGPA() {
     
     const cgpaResult = document.getElementById('cgpa-result');
     if (cgpaResult) {
-        cgpaResult.textContent = `CGPA: ${cgpa.toFixed(2)}`;
+        cgpaResult.textContent = `CGPA: ${(Math.round(cgpa * 100) / 100).toFixed(2)}`;
     }
 }
 
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const likeBtn = document.getElementById('like-btn');
     if (likeBtn) {
-        likeBtn.removeEventListener('click', incrementLike); // Remove if it exists
+        likeBtn.removeEventListener('click', incrementLike); // remove if it exists
         likeBtn.addEventListener('click', incrementLike);
     }
     
