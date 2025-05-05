@@ -7,7 +7,7 @@ let likeCount = localStorage.getItem('likeCount') ? parseInt(localStorage.getIte
 
 function preciseRound(num, decimals) {
     const factor = Math.pow(10, decimals);
-    return Math.round((num + Number.EPSILON) * factor) / factor;
+    return Math.round((num * factor) + (Number.EPSILON * factor)) / factor;
 }
 
 function navigateToGroup(group) {
@@ -129,10 +129,13 @@ function calculateCGPA() {
 }
 
 function downloadAsImage() {
-    const activeSemester = document.querySelector('.semester-content[style="display: block;"]') || document.querySelector('.semester-content:not([style])');
+    const activeSemester = document.querySelector('.semester-content[style="display: block;"]') || 
+                          document.querySelector('.semester-content:not([style])');
+
     if (!activeSemester) return;
 
     const container = activeSemester.querySelector('.download-container');
+
     if (!container) return;
     
     const downloadBtn = document.getElementById('download-btn');
