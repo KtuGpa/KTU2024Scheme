@@ -5,6 +5,11 @@ const gradePoints = {
 
 let likeCount = localStorage.getItem('likeCount') ? parseInt(localStorage.getItem('likeCount')) : 0;
 
+function preciseRound(num, decimals) {
+    const factor = Math.pow(10, decimals);
+    return Math.round((num + Number.EPSILON) * factor) / factor;
+}
+
 function navigateToGroup(group) {
     window.location.href = `group-${group}.html`;
 }
@@ -97,7 +102,7 @@ function calculateSemesterSGPA(semesterId) {
         }
     });
 
-    return totalCredits > 0 ? parseFloat((totalGradePoints / totalCredits).toFixed(2)) : 0;
+    return totalCredits > 0 ? preciseRound(totalGradePoints / totalCredits, 2) : 0;
 }
 
 function calculateSGPA() {
@@ -116,9 +121,7 @@ function calculateSGPA() {
 function calculateCGPA() {
     const sgpa1 = parseFloat(document.getElementById('sgpa-result-sem1')?.textContent) || 0;
     const sgpa2 = parseFloat(document.getElementById('sgpa-result-sem2')?.textContent) || 0;
-
-    const cgpa = parseFloat(((sgpa1 + sgpa2) / 2).toFixed(2));
-
+    const cgpa = preciseRound((sgpa1 + sgpa2) / 2, 2);
     const cgpaResult = document.getElementById('cgpa-result');
     if (cgpaResult) {
         cgpaResult.textContent = `CGPA: ${cgpa.toFixed(2)}`;
@@ -126,13 +129,10 @@ function calculateCGPA() {
 }
 
 function downloadAsImage() {
-    const activeSemester = document.querySelector('.semester-content[style="display: block;"]') || 
-                          document.querySelector('.semester-content:not([style])');
-
+    const activeSemester = document.querySelector('.semester-content[style="display: block;"]') || document.querySelector('.semester-content:not([style])');
     if (!activeSemester) return;
 
     const container = activeSemester.querySelector('.download-container');
-
     if (!container) return;
     
     const downloadBtn = document.getElementById('download-btn');
