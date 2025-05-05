@@ -103,8 +103,8 @@ function calculateSGPA() {
     const sgpaResult1 = document.getElementById('sgpa-result-sem1');
     const sgpaResult2 = document.getElementById('sgpa-result-sem2');
     
-    if (sgpaResult1) sgpaResult1.textContent = sgpa1.toFixed(2);
-    if (sgpaResult2) sgpaResult2.textContent = sgpa2.toFixed(2);
+    if (sgpaResult1) sgpaResult1.textContent = (Math.round(sgpa1 * 100) / 100).toFixed(2);
+    if (sgpaResult2) sgpaResult2.textContent = (Math.round(sgpa2 * 100) / 100).toFixed(2);
     
     calculateCGPA();
 }
