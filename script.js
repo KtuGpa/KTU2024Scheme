@@ -1,24 +1,21 @@
-// Grade point mapping
 const gradePoints = {
     'S': 10, 'A+': 9, 'A': 8.5, 'B+': 8, 'B': 7.5,
     'C+': 7, 'C': 6.5, 'D': 6, 'P': 5.5, 'F': 0
 };
 
-// Initialize like count from localStorage
 let likeCount = localStorage.getItem('likeCount') ? parseInt(localStorage.getItem('likeCount')) : 0;
-// Function to navigate to selected group
+
 function navigateToGroup(group) {
     window.location.href = `group-${group}.html`;
 }
 
-// Function to update like count display
 function updateLikeCountDisplay() {
     const likeCountElement = document.getElementById('like-count');
     if (likeCountElement) {
         likeCountElement.textContent = likeCount;
     }
 }
-// Function to toggle between grade and marks input
+
 function toggleInputType(selectElement) {
     const row = selectElement.closest('tr');
     const gradeSelect = row.querySelector('.grade');
@@ -32,8 +29,6 @@ function toggleInputType(selectElement) {
         gradeSelect.style.display = 'none';
         marksInput.style.display = '';
         marksInput.disabled = false;
-
-        // If marks already has a value, update the grade
         if (marksInput.value && !isNaN(marksInput.value)) {
             updateGradeFromMarks(marksInput);
         }
@@ -41,19 +36,15 @@ function toggleInputType(selectElement) {
     calculateSGPA();
 }
 
-// Function to update grade based on marks
 function updateGradeFromMarks(marksInput) {
     const marks = parseFloat(marksInput.value);
     let grade = marksToGrade(marks);
-
-    // Update the grade select
     const gradeSelect = marksInput.closest('td').querySelector('.grade');
     if (gradeSelect) {
         gradeSelect.value = grade;
     }
 }
 
-// Function to convert marks to grade
 function marksToGrade(marks) {
     if (marks >= 90) return 'S';
     if (marks >= 80) return 'A+';
@@ -67,29 +58,18 @@ function marksToGrade(marks) {
     return 'F';
 }
 
-// Function to switch between semesters
 function openSemester(semesterId) {
-    // Hide all semester contents
     document.querySelectorAll('.semester-content').forEach(content => {
         content.style.display = 'none';
     });
-
-    // Remove active class from all buttons
     document.querySelectorAll('.tab-button').forEach(button => {
         button.classList.remove('active');
     });
-
-    // Show the selected semester content
     document.getElementById(semesterId).style.display = 'block';
-
-    // Add active class to the clicked button
     event.currentTarget.classList.add('active');
-    
-    // Recalculate SGPA when switching semesters
     calculateSGPA();
 }
 
-// Function to calculate SGPA for a specific semester
 function calculateSemesterSGPA(semesterId) {
     const semesterTable = document.getElementById(semesterId);
     if (!semesterTable) return 0;
@@ -117,10 +97,9 @@ function calculateSemesterSGPA(semesterId) {
         }
     });
 
-    return totalCredits > 0 ? (totalGradePoints / totalCredits) : 0;
+    return totalCredits > 0 ? Math.round((totalGradePoints / totalCredits) * 100) / 100 : 0;
 }
 
-// Function to calculate and display SGPA for both semesters
 function calculateSGPA() {
     const sgpa1 = calculateSemesterSGPA('sem1');
     const sgpa2 = calculateSemesterSGPA('sem2');
@@ -134,12 +113,11 @@ function calculateSGPA() {
     calculateCGPA();
 }
 
-// Function to calculate CGPA
 function calculateCGPA() {
     const sgpa1 = parseFloat(document.getElementById('sgpa-result-sem1')?.textContent) || 0;
     const sgpa2 = parseFloat(document.getElementById('sgpa-result-sem2')?.textContent) || 0;
 
-    const cgpa = (sgpa1 + sgpa2) / 2;
+    const cgpa = Math.round(((sgpa1 + sgpa2) / 2) * 100) / 100;
 
     const cgpaResult = document.getElementById('cgpa-result');
     if (cgpaResult) {
@@ -147,7 +125,6 @@ function calculateCGPA() {
     }
 }
 
-// Download as image functionality
 function downloadAsImage() {
     const activeSemester = document.querySelector('.semester-content[style="display: block;"]') || 
                           document.querySelector('.semester-content:not([style])');
@@ -158,7 +135,6 @@ function downloadAsImage() {
 
     if (!container) return;
     
-    // Temporarily hide the download button to avoid capturing it
     const downloadBtn = document.getElementById('download-btn');
     const originalDisplay = downloadBtn.style.display;
     downloadBtn.style.display = 'none';
@@ -180,24 +156,25 @@ function downloadAsImage() {
     });
 }
 
-// Initialize the page when DOM is loaded
+function incrementLike() {
+    likeCount++;
+    localStorage.setItem('likeCount', likeCount.toString());
+    updateLikeCountDisplay();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize like count display
     updateLikeCountDisplay();
 
-    // Set up event listeners for input type changes
     document.querySelectorAll('.input-type').forEach(input => {
         input.addEventListener('change', function() {
             toggleInputType(this);
         });
     });
 
-    // Set up event listeners for grade changes
     document.querySelectorAll('.grade').forEach(grade => {
         grade.addEventListener('change', calculateSGPA);
     });
 
-    // Set up event listeners for marks input
     document.querySelectorAll('.marks').forEach(marks => {
         marks.addEventListener('input', function() {
             if (this.disabled) return;
@@ -206,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set up semester tab buttons
     document.querySelectorAll('.tab-button').forEach(button => {
         button.addEventListener('click', function() {
             const semesterId = this.getAttribute('data-semester');
@@ -214,25 +190,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set up download button
     const downloadBtn = document.getElementById('download-btn');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', downloadAsImage);
     }
 
-    // Set up like button (with removal of previous listener first)
     const likeBtn = document.getElementById('like-btn');
     if (likeBtn) {
-        likeBtn.removeEventListener('click', incrementLike); // Remove if it exists
+        likeBtn.removeEventListener('click', incrementLike);
         likeBtn.addEventListener('click', incrementLike);
     }
 
-    // Set up CGPA button
     const cgpaBtn = document.getElementById('cgpa-btn');
     if (cgpaBtn) {
         cgpaBtn.addEventListener('click', calculateCGPA);
     }
 
-    // Calculate initial SGPA/CGPA
     calculateSGPA();
 });
